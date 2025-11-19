@@ -1,132 +1,139 @@
-HydroSync
-HydroSync is a comprehensive physiological monitoring system designed to track real-time health metrics such as hydration and fatigue. It combines a custom ESP32-based wearable device with a feature-rich Android application to provide users with actionable wellness insights.
+# HydroSync
 
-📖 Table of Contents
-Overview
+A real-time physiological monitoring system for hydration, stress, and fatigue tracking using an ESP32-based wearable and an Android mobile application.
 
-Key Features
+## 📌 Overview
 
-System Architecture
+HydroSync is a multi-sensor wearable + mobile app system designed to continuously monitor:
 
-Tech Stack
+* **GSR (Skin Conductance)**
+* **HRV / Heart Rate**
+* **Skin Temperature**
 
-Getting Started
+The wearable streams data via **Bluetooth Low Energy (BLE)** to the Android application, which processes, visualizes, and logs the metrics. The system is intended for daily use, sports performance monitoring, and mental/physical stress tracking.
 
-Hardware Setup
+---
 
-Mobile App Setup
+## 🚀 Features
 
-Usage
+### **Wearable Device**
 
-Documentation
+* ESP32-based modular sensor platform
+* Real-time BLE data streaming
+* 3 key physiological sensors: GSR, HRV, Temperature
+* Low-power design with rechargeable Li-ion battery
 
-Author
+### **Mobile App**
 
-🧐 Overview
-The HydroSync system addresses the need for continuous physiological monitoring. The wearable device acquires data from multiple sensors and transmits it via Bluetooth Low Energy (BLE) to the mobile app. The app processes this data to calculate a "Hydration Score" and "Fatigue Level," visualizing trends and alerting the user to critical states like dehydration or high stress.
+* Real-time dashboard with line charts
+* Hydration & fatigue insights
+* BLE scan + connect workflow
+* Data logging + history/trend analysis
+* Smart alerts for dehydration & stress
 
-✨ Key Features
-Wearable Device
-Multi-Sensor Fusion: Integrates Galvanic Skin Response (GSR), Heart Rate Variability (HRV), and Skin Temperature sensors.
+---
 
-Real-Time Data: Samples physiological data at user-configurable intervals (e.g., 5s, 10s, 30s).
+## 🏗 System Architecture
 
-Efficient Connectivity: Uses Bluetooth Low Energy (BLE) for low-latency (< 2s) data transmission.
+```
+Sensors (GSR / HRV / Temp)
+          ↓
+       ESP32 MCU → Preprocessing → BLE Packet
+          ↓
+      Android App → Parsing → UI → Storage → Alerts
+```
 
-Portable Power: Runs on a rechargeable Li-Ion battery for ≥ 5 hours of continuous use.
+---
 
-Mobile Application
-Live Dashboard: Displays real-time hydration status, fatigue levels, and temperature with color-coded status banners (e.g., "Optimal", "Dehydrated").
+## 🛠 Technology Stack
 
-Smart Alerts: Detects and logs critical events (e.g., "Fatigue Detected") with timestamped history and export capabilities.
+### **Hardware**
 
-Trend Analysis: Visualizes historical data (Daily, Weekly, Monthly) to identify long-term health patterns.
+* ESP32 Dev Board
+* GSR Sensor
+* Pulse/HRV Sensor
+* Skin Temperature Sensor
 
-Offline Capability: Stores data locally using SQLite, allowing access to trends without an internet connection.
+### **Firmware**
 
-🏗️ System Architecture
-The project is divided into four main subsystems:
+* Arduino IDE / ESP32 Core
+* BLE Server (Custom Characteristic)
 
-Wearable Hardware: ESP32 MCU, Sensors (GSR, HRV, Temp), and Battery.
+### **Mobile App**
 
-Wearable Firmware: Arduino-based software handling sensor acquisition and BLE broadcasting.
+* Kotlin + Android Studio
+* MVVM Architecture
+* LiveData & Coroutines
+* MPAndroidChart for real-time graphs
+* SQLite local storage
 
-Communication: BLE protocol for data packets (Timestamp, GSR, HRV, Temp, Battery).
+---
 
-Mobile Application: Android app built with MVVM architecture (Model-View-ViewModel).
+## 📥 Getting Started
 
-💻 Tech Stack
-Hardware
-Microcontroller: ESP32 (Wi-Fi/BLE capable).
+### **1. Clone Repository**
 
-Sensors:
+```bash
+git clone https://github.com/ssandhyapatel/Hydrosync.git
+```
 
-GSR Sensor (Skin Conductivity)
+### **2. Hardware Setup**
 
-Pulse/HRV Sensor (e.g., MAX30100)
+* Connect GSR, HRV, and Temp sensors to ESP32 pins
+* Upload provided firmware via Arduino IDE
+* Power device (USB or Li-ion battery)
+* Ensure BLE is broadcasting
 
-Temperature Sensor (e.g., LM35)
+### **3. App Setup (Android Studio)**
 
-Power: Li-Ion Battery.
+* Open project in Android Studio
+* Allow Gradle to sync
+* Build + run app on a BLE-supported device
 
-Software
-Firmware: C++ / Arduino IDE.
+---
 
-Mobile App: Kotlin / Android Studio.
+## 📱 Usage Flow
 
-Architecture: MVVM.
+1. Power the wearable device
+2. Open HydroSync app
+3. Scan → Connect to ESP32 BLE device
+4. View real-time sensor graphs
+5. Review hydration/fatigue status
+6. Check history & logs
 
-UI Design: Figma-based layouts.
+---
 
-🚀 Getting Started
-Prerequisites
-Hardware: ESP32 development board, sensor modules, and jumper wires.
+## 📚 Documentation
 
-Software:
+This repository includes design docs:
 
-Arduino IDE (for firmware).
+* PRD (Requirements)
+* System Architecture Notes
+* App UI/UX Design Specs
+* BLE Characteristic Documentation
 
-Android Studio (for mobile app).
+---
 
-Hardware Setup
-Connect the sensors to the ESP32 pins as defined in the hardware design (refer to HS-DES-002).
+## 🤝 Contributing
 
-Open Hydrosync.ino in the Arduino IDE.
+Contributions welcomed!
 
-Install necessary libraries for the ESP32 and sensors.
+1. Fork repo
+2. Create a feature branch
+3. Commit changes
+4. Submit Pull Request
 
-Upload the sketch to your ESP32 board.
+---
 
-Mobile App Setup
-Clone this repository.
+## 📄 License
 
-Open the hydrosync folder in Android Studio.
+MIT License — free to use, modify, and distribute.
 
-Sync the project with Gradle files.
+---
 
-Build and Run the application on an Android device or emulator (ensure Bluetooth is enabled).
+## 👤 Author
 
-📱 Usage
-Power On: Turn on the wearable device.
+**Sandhya Patel**
 
-Pairing: Open the HydroSync app and navigate to the connection screen to scan for the device.
+HydroSync — Stay Hydrated, Stay Healthy! 🌊
 
-Dashboard: Once connected, view your real-time metrics on the Home screen.
-
-Settings: Go to the User Profile or Settings tab to configure alert thresholds and sync intervals.
-
-History: Check the Trends tab to see how your hydration and fatigue have changed over time.
-
-📂 Documentation
-Detailed documentation can be found in the Documentation/ directory:
-
-HS-REQ-001: Product Requirements Document.
-
-HS-DES-001: System Architecture Document.
-
-HS-DES-004: Mobile Application Design Document.
-
-HS-VVP-001: Verification & Validation Plan.
-
-✍️ Author
-Sandhya Patel
