@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:text="Wellness Reminders"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- Proactive suggestions card -->
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="4dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView android:text="Proactive Suggestions" android:textStyle="bold"/>
+                <TextView android:text="Last synced: Just now" android:id="@+id/tvLastSynced" android:textSize="12sp" android:layout_marginTop="4dp"/>
+
+                <!-- Hydration suggestion -->
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:background="#E6F7F2"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp"
+                    android:clipToPadding="false">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@android:drawable/ic_menu_compass" />
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+                        <TextView android:text="Hydration: Drink 500ml of water now." android:textSize="14sp"/>
+                        <TextView android:text="(tap Log Drink to record)" android:textSize="12sp" android:textColor="#666" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnLogDrink"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Log Drink"/>
+                </LinearLayout>
+
+                <!-- Fatigue suggestion -->
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:background="#97B8B1"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@android:drawable/ic_menu_recent_history" />
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+                        <TextView android:text="Fatigue: Take a 15-minute break." android:textSize="14sp"/>
+                        <TextView android:text="(tap Set Timer to schedule reminder)" android:textSize="12sp" android:textColor="#666" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnSetTimer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Set Timer"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Daily Nudges card -->
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="4dp">
+            <LinearLayout android:padding="12dp" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:text="Daily Nudges" android:textStyle="bold"/>
+                <TextView android:layout_marginTop="10dp" android:text="Reminder: Stand up and stretch."/>
+                <Button android:id="@+id/btnEnableNudge" android:text="Enable Daily Nudge" android:layout_marginTop="8dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Smart Reminders card -->
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="4dp">
+            <LinearLayout android:padding="12dp" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:text="Smart Reminders" android:textStyle="bold"/>
+                <LinearLayout android:orientation="horizontal" android:layout_marginTop="10dp" android:gravity="center_vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:text="Morning: Get some sunlight." android:layout_weight="1" android:layout_width="0dp"/>
+                    <Switch android:id="@+id/swMorning" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Logs -->
+        <TextView android:id="@+id/tvLogsTitle" android:text="Activity Log" android:textStyle="bold" android:layout_marginTop="12dp"/>
+        <LinearLayout android:id="@+id/llLogs" android:layout_marginTop="8dp" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

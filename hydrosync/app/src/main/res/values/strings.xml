@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">HydroSync</string>
+
+    <string name="allow">Allow</string>
+    <string name="skip">Skip</string>
+    <string name="close">Close</string>
+
+    <string name="onboard_image_desc">HydroSync Logo</string>
+    <string name="onboard_welcome">Welcome to HydroSync</string>
+    <string name="onboard_subtitle">Hydration &amp; wellness monitoring using your sensor</string>
+    <string name="onboard_continue">Enable required permissions</string>
+    <string name="onboard_skip">Skip for now</string>
+    <string name="onboard_bullet_1">• Connect to BLE sensors for live readings</string>
+    <string name="onboard_bullet_2">• Receive urgent alerts and reminders</string>
+    <string name="onboard_bullet_3">• Personalised suggestions and trends</string>
+
+    <string name="onboard_perm_title">Allow Notifications</string>
+    <string name="onboard_perm_msg">HydroSync sends urgent alerts about your hydration and fatigue levels.</string>
+
+    <string name="status_scanning">Status: Scanning...</string>
+    <string name="status_stopped">Status: Stopped</string>
+    <string name="status_scan_finished">Status: Scan finished</string>
+</resources>

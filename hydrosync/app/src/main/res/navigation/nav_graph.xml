@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_dashboard">
+
+    <!-- Top-level fragments (visible in BottomNav) -->
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.hydrosync.mobile.ui.navigation.DashboardFragment"
+        android:label="Dashboard" >
+        <!-- actions from dashboard to PersonalSummary & Wellness -->
+        <action
+            android:id="@+id/action_dashboard_to_personal"
+            app:destination="@id/personal_summary" />
+        <action
+            android:id="@+id/action_dashboard_to_wellness"
+            app:destination="@id/wellness" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_trends"
+        android:name="com.hydrosync.mobile.ui.navigation.TrendsFragment"
+        android:label="Trends" />
+
+    <fragment
+        android:id="@+id/navigation_alerts"
+        android:name="com.hydrosync.mobile.ui.navigation.AlertsFragment"
+        android:label="Alerts" />
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.hydrosync.mobile.ui.navigation.SettingsFragment"
+        android:label="Settings" />
+
+    <!-- Not in bottom nav — reachable only from Dashboard -->
+    <fragment
+        android:id="@+id/personal_summary"
+        android:name="com.hydrosync.mobile.ui.navigation.PersonalSummaryFragment"
+        android:label="Personal Summary" />
+
+    <fragment
+        android:id="@+id/wellness"
+        android:name="com.hydrosync.mobile.ui.navigation.WellnessFragment"
+        android:label="Wellness" />
+</navigation>

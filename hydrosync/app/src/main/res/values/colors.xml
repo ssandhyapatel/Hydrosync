@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="brand_primary">#0CA678</color>
+    <color name="brand_on_primary">#FFFFFF</color>
+    <color name="brand_primary_container">#DFF6EC</color>
+
+    <color name="accent_warn">#D32F2F</color>
+    <color name="accent_info">#2E7DA8</color>
+
+    <color name="md_sys_background">#F8F9FA</color>
+    <color name="md_sys_surface">#FFFFFF</color>
+    <color name="md_sys_on_surface">#111827</color>
+
+    <color name="card_bg">#FFFFFF</color>
+    <color name="card_stroke">#E6E9EB</color>
+    <color name="divider">#E0E0E0</color>
+
+    <color name="text_primary">#111827</color>
+    <color name="text_secondary">#6B7280</color>
+    <color name="text_tertiary">#9CA3AF</color>
+
+    <color name="nav_icon_active">#0CA678</color>
+    <color name="nav_icon_inactive">#9CA3AF</color>
+    <color name="nav_bg">#FFFFFF</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+</resources>
